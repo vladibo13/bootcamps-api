@@ -8,6 +8,9 @@ const connectDB = require('./config/db')
 // routes
 const bootcamps = require('./routes/bootcamps')
 
+//middleware
+app.use(express.json())
+
 //env variables
 dotenv.config({ path: './config/config.env' })
 const PORT = process.env.PORT || 5000
