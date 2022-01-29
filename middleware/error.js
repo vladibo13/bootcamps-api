@@ -17,6 +17,7 @@ const errorHandler = (error, req, res, next) => {
     e = new ErrorResponse(message, 400)
   }
 
+  //mongoose validation error
   if (error.name === 'ValidationError') {
     const message = Object.values(error.errors).map((value) => value.message)
     e = new ErrorResponse(message, 400)
