@@ -1,6 +1,9 @@
+//env variables
+const dotenv = require('dotenv')
+dotenv.config({ path: './config/config.env' })
+
 const express = require('express')
 const app = express()
-const dotenv = require('dotenv')
 const colors = require('colors')
 const morgan = require('morgan')
 const connectDB = require('./config/db')
@@ -12,8 +15,6 @@ const bootcamps = require('./routes/bootcamps')
 //middleware
 app.use(express.json())
 
-//env variables
-dotenv.config({ path: './config/config.env' })
 const PORT = process.env.PORT || 5000
 
 //connect to database
